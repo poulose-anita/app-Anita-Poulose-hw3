@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.center {
+  width: 400px;
+  height: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-width: 8px;
+  border-color: blue;
+  border-style: solid;
+  background-color: rgb(258,241,214);
+}
+
+#theform{
+    color:blue;
+    display:table;
+    padding: 25px;
+}
+
+.row{
+   display: table-row; 
+}
+
+.row label{
+   display: table-cell; 
+   text-align: right;
+    vertical-align: top;
+}
+
+.row input{
+   display: table-cell; 
+}
+
+
+
+.submit input {
+    background-color: blue;
+   color:white;
+   
+}
+
+.error {
+   
+   color: red;
+   position: absolute;
+ text-align: center;
+margin-left: 80px;
+margin-bottom: 60px;
+ 
+   
+}
+
+
+.success {
+   
+   color: green;
+   position: absolute;
+ text-align: center;
+margin-left: 80px;
+margin-bottom: 60px;
+ 
+   
+}
+
+
+</style>
+</head>
+<body>
+<div class = "center">
+
+<form id = "theform" action="POST" method="" onsubmit="return (regvalidate())">
+<p>
+    <div class="row">
+    <label for="firstname">First Name:</label>
+    <input type="text" id= "firstname" name="" size="30"> </br></br>
+    </div>
+
+    <div class="row">
+    <label for="lastname">Last Name:</label>
+    <input type="text" id= "lastname" name="" size="30"> </br></br>
+    </div>
+
+    <div class="row">
+    <label for="email">Email Address:</label>
+    <input type="Email" id="email" name="" size="30"> </br></br>
+    </div>
+
+    
+     <div class="row">
+     <label for="notes">Notes: </label>
+     <textarea rows="5" cols="28" id="notes" name="" ></textarea>
+     </div></br>
+   
+
+    <div class="row"> 
+    <label for="register"> </label> 
+    <div class ="submit">
+    <input type="SUBMIT" id = "register" name="" value="Register" size = "20">
+    </div> 
+    </div>
+
+     <p id="errorid" class="error"></p>
+
+    </div>
+
+
+</p>
+
+</form>
+
+</div>
+</body>
+<script type="text/javascript">
+
+function regvalidate()
+
+{
+
+
+if(!(document.getElementById('firstname').value == "") && !(document.getElementById('lastname').value == "") &&
+    !(document.getElementById('email').value == "") && !(document.getElementById('notes').value == ""))
+{
+       document.getElementById("errorid").innerHTML = "Validation Successful";
+       document.getElementById("errorid").className = "success" ;
+
+
+}
+
+if(document.getElementById('firstname').value == "")
+ {
+  
+  document.getElementById("errorid").innerHTML = "First Name cannot be empty";
+    document.getElementById("errorid").className = "error" ;
+  return(false);
+ }
+  
+  
+if(document.getElementById('lastname').value == "")
+ {
+  
+  document.getElementById("errorid").innerHTML = "Last Name cannot be empty";
+  document.getElementById("errorid").className = "error" ;
+  return(false);
+ }
+
+ if(document.getElementById('email').value == "")
+ {
+  
+  document.getElementById("errorid").innerHTML = "Email cannot be empty";
+  document.getElementById("errorid").className = "error" ;
+  return(false);
+ }
+ 
+  if(document.getElementById('notes').value == "")
+ {
+  
+  document.getElementById("errorid").innerHTML = "Notes cannot be empty";
+  document.getElementById("errorid").className = "error" ;
+  return(false);
+ } 
+  
+}
+</script>
+</html>
