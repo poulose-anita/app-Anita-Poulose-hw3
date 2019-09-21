@@ -19,7 +19,8 @@
 #theform{
     color:blue;
     display:table;
-    padding: 25px;
+    padding:  30px;
+    
 }
 
 .row{
@@ -38,9 +39,17 @@
 
 
 
-.submit input {
+.submit span {
+    padding: 10px;
+    width: 35%;
     background-color: blue;
    color:white;
+   float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
    
 }
 
@@ -73,8 +82,9 @@ margin-bottom: 60px;
 <body>
 <div class = "center">
 
-<form id = "theform" action="/index.html" method="get" onsubmit="return (regvalidate())">
-<p>
+<form id = "theform" action="" method="" >
+
+
     <div class="row">
     <label for="firstname">First Name:</label>
     <input type="text" id= "firstname" name="" size="30"> </br></br>
@@ -87,7 +97,7 @@ margin-bottom: 60px;
 
     <div class="row">
     <label for="email">Email Address:</label>
-    <input type="Email" id="email" name="" size="30"> </br></br>
+    <input type="email" id="email" name="" size="30"> </br></br>
     </div>
 
     
@@ -100,7 +110,8 @@ margin-bottom: 60px;
     <div class="row"> 
     <label for="register"> </label> 
     <div class ="submit">
-    <input type="SUBMIT" id = "register" name="" value="Register" size = "20">
+    <!--<input type="SUBMIT" id = "register" name="" value="Register" size = "20"> -->
+    <span onclick="return (regvalidate())" class="submit" size = "20">Register</span>
     </div> 
     </div>
 
@@ -109,9 +120,9 @@ margin-bottom: 60px;
     </div>
 
 
-</p>
 
-</form>
+
+</form> 
 
 </div>
 </body>
